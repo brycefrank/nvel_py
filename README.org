@@ -1,0 +1,2 @@
+nvel_py is a Python API for interacting with the United States Forest Service National Volume Estimator Library (NVEL). It is meant to add a higher level
+layer of interaction for Python users to access and use the equations.
