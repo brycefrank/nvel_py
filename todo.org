@@ -1,0 +1,34 @@
+Some thoughts:
+
+Obviously an issue here is user-friendliness and security with regard to preventing
+segmentation faults (arguably this is the purpose of the entire package). 
+I think most of this should work itself out as I use the package 
+to replicate some of the numbers from the sample data.
+
+Here is a mock up of how I would like the package to behave:
+
+#+BEGIN_SRC python
+from nvel_py import NVEL
+import pandas as pd
+
+vollib = NVEL('path/to/library.so')
+
+# Get volume equation string for some arbitrary area and species
+pp_eq = vollib.getvoleq(regn = 2, dist = '01', forst = '01', spec = 122, prod = '01')
+
+
+# Import pandas dataframe of field data and merch specification
+# These would be created via opencompile + GUI (allegedly...)
+field_data = pd.read_csv('path/to/field_data.csv')
+
+# Ideally this file would have merch specifications for every species
+# in field_data (this is something I could run a check for)
+merch_spec = pd.read_csv('path/to/merc_spec.csv')
+
+# And then somehow the volume library gets called onto the field data
+# and merch specifications, and returns a new data frame (or column maybe)
+# of calculated volumes, and everyone celebrates the benefits of free software
+vollib.vollibc2(field_data, merch_spec...etc)
+
+
+#+END_SRC
