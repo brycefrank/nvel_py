@@ -32,3 +32,7 @@ vollib.vollibc2(field_data, merch_spec...etc)
 
 
 #+END_SRC
+
+** Notes
+*** TODO Get text file of all functions and required arguments
+    - Not very dynamic / update-able...
